@@ -1,1 +1,135 @@
-/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@font-face {
+  font-family: 'Roboto-Light';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(https://themes.googleusercontent.com/static/fonts/roboto/v9/Pru33qjShpZSmG3z6VYwnT8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto-Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), local('Roboto-Regular'), url(https://themes.googleusercontent.com/static/fonts/roboto/v9/Xyjz-jNkfiYuJf8UC3Lizw.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto-Medium';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(https://themes.googleusercontent.com/static/fonts/roboto/v9/oOeFwZNlrTefzLYmlVV1UD8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto-Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://themes.googleusercontent.com/static/fonts/roboto/v9/97uahxiqZRoncBaCEI3aWz8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto-LightItalic';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://themes.googleusercontent.com/static/fonts/roboto/v9/7m8l7TlFO-S3VkhHuR0at9Ih4imgI8P11RFo6YPCPC0.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto-Italic';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Roboto Italic'), local('Roboto-Italic'), url(https://themes.googleusercontent.com/static/fonts/roboto/v9/dFWsweFqlD8ExfyN7Gh_GPesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto-MediumItalic';
+  font-style: italic;
+  font-weight: 500;
+  src: local('Roboto Medium Italic'), local('Roboto-MediumItalic'), url(https://themes.googleusercontent.com/static/fonts/roboto/v9/OLffGBTaF0XFOW1gnuHF0dIh4imgI8P11RFo6YPCPC0.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto-BoldItalic';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url(https://themes.googleusercontent.com/static/fonts/roboto/v9/t6Nd4cfPRhZP44Q5QAjcC9Ih4imgI8P11RFo6YPCPC0.woff) format('woff');
+}
+
+h5{
+  font-family: 'Roboto-Regular';
+  font-size: 24px !important;
+}
+
+button {
+  /*font-size: 14px;*/
+  /*--bs-btn-font-size: 10px  !important;*/
+  color: white !important;
+  background-color: #2DAAE1 !important;
+  border: none;
+
+  transition: background-color 0.3s;
+
+  &:hover,
+  &:focus {
+    background-color: #00638F !important;
+    border-color: #00638F !important;
+  }
+}
+
+a {
+  font-family: 'Roboto-Medium';
+  font-size: 16px;
+  color: white !important;
+}
+
+
+.headline1{
+  font-family: 'Roboto-Regular';
+  font-size: 24px;
+}
+
+
+.headline2{
+  font-family: 'Roboto-Medium';
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+.error_dialog_text{
+  font-family: 'Roboto-Bold';
+  font-size: 24px;
+  color: #666666;
+  margin-left: 50px;
+  margin-right: 50px;
+  line-height: 1.2;
+}
+
+.subheader_title{
+  font-family: 'Roboto-Regular';
+  font-size: 24px;
+  color: #000000;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+
+.btn_modal_custom{
+  color: white !important;
+  border: none !important;
+  width: 70%;
+}
+
+
+$btn-font-family: 'Roboto-Medium' !important;
+$btn-font-size-lg: 14px !important;
+$btn-border-radius: 4px !important;
+$input-border-radius: 3px;
+$input-disabled-bg: rgba(33, 33, 33, 0.08);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
