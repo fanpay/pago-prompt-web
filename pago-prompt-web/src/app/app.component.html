@@ -1,2 +1,34 @@
-index works!
-<router-outlet></router-outlet>
+<nav class="navbar" style="background-color: #2DAAE1; height: 97px;" *ngIf="authenticationService.isAuthenticated">
+  <div class="container-fluid">
+    <a class="navbar-brand">Bienvenido Jhon</a>
+
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item pointer">
+        <button type="button" class="nav-link logout" (click)="logout()"
+                (mouseover)="changeImage('logout_hover.png')"
+                (mouseout)="changeImage('logout.png')">
+          <div class="button-content">
+            <img [src]="imageSrc" alt="Icono normal" class="icon">
+            <span>SALIR</span>
+          </div>
+        </button>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+<div class="container-fluid" id="principal">
+  <div class="row">
+    <div class="col-md-12">
+      <div>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer"  *ngIf="authenticationService.isAuthenticated">
+  <div class="container-fluid">
+    <img src="../assets/dashboard/water_pagoprompt_dashboard.png" alt="Imagen de footer" class="footer-image">
+  </div>
+</footer>
