@@ -1,1 +1,74 @@
-<p>alarms works!</p>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0" style="display: flex; align-items: center;">
+            <img src="../assets/subheader/alarms.png" alt="Logo" class="logo" style="width: 40px; height: 40px;">
+            <p class="subheader_title mb-0 ms-2"> Alarmas </p>
+          </span>
+          <button class="btn btn-info btn-lg btn-block btn-back" (click)="goBack()">REGRESAR</button>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="row justify-content-center align-items-center mt-5">
+    <div class="col-12 col-md-6">
+      <p class="text-center pb-5 mt-5 text-header">Al posponer cualquiera de tus alarmas serás notificado después de:</p>
+      <form
+        [formGroup]="alarmsForm"
+        class="form-horizontal"
+      >
+      <div class="container text-center mt-5">
+        <div class="row justify-content-md-center">
+          <div class="col col-sm-1">
+            <input type="text"
+                    class="form-control"
+                    formControlName="inputDays"
+                    id="inputDays"
+                    style="width: 60px;text-align: center;">
+          </div>
+          <div class="col-md-auto">
+
+          </div>
+          <div class="col col-sm-2">
+            <select class="form-select shadow"  aria-label="timeAlarms">
+              <option value="days" selected>DÍA(S)</option>
+              <option value="minutes">MINUTO(S)</option>
+              <option value="hours">HORA(S)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      </form>
+      <div class="row justify-content-center pt-5 mt-5">
+        <div class="col-auto">
+          <button class="btn btn-info btn-lg btn-block btn-save" data-bs-toggle="modal" data-bs-target="#successModal">GUARDAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="modal fade" id="successModal" role="dialog" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-responsive">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <div class="error_dialog_text">
+          Se han guardado los datos <br/>exitosamente
+        </div>
+        <img src="../assets/background/ok_dialog.png" alt="Error" style="width: 72px; height: 71px; margin: 20px 10px 5px 10px;">
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-primary btn-lg btn_modal_custom" data-bs-dismiss="modal">
+          ACEPTAR
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
