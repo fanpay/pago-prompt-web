@@ -1,0 +1,99 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0" style="display: flex; align-items: center;">
+            <img src="../assets/subheader/public_services.png" alt="Logo" class="logo" style="width: 40px; height: 40px;">
+            <p class="subheader_title mb-0 ms-2"> Servicios </p>
+          </span>
+
+
+          <button class="btn btn-info btn-lg btn-block btn-back" (click)="goBack()">REGRESAR</button>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="row justify-content-center align-items-center mt-5">
+    <div class="col-6">
+      <div class="mb-3 row align-items-center">
+        <label for="staticEmail" class="col-sm-4 col-form-label custom-label-form">Cédula</label>
+        <div class="col-sm-8">
+          <input class="form-control custom-input" type="text" value="9999999999" aria-label="Disabled input" disabled readonly>
+        </div>
+      </div>
+      <div class="mb-3 row align-items-center">
+        <label for="inputPassword" class="col-sm-4 col-form-label custom-label-form ">Tipo Servicio</label>
+        <div class="col-sm-8 d-flex align-items-center h-100">
+          <select #selectElement class="form-select mb-3 custom-select shadow custom-select-large align-middle"  aria-label="typeService" (change)="onSelectChange($event)">
+            <option value="" selected>Seleccione el servicio</option>
+            <option value="water">Agua - Acueducto Bogotá</option>
+            <option value="energy">Energía - CODENSA</option>
+            <option value="gas">Gas - Gases Capital</option>
+          </select>
+        </div>
+      </div>
+      <div [hidden]="!showContractNumberInput" class="mb-3 row align-items-center">
+        <label class="col-sm-4 col-form-label custom-label-form">Nº Contrato</label>
+        <div class="col-sm-8">
+          <input class="form-control custom-input" id="inputContractNumber" type="text" aria-label="Número de Contrato" [hidden]="!showContractNumberInput" (keyup)="showSearchBillingButton($event)" (keypress)="onlyNumbers($event)">
+        </div>
+      </div>
+      <div [hidden]="!showSearchBillingBtn" class="mb-3 row align-items-center">
+        <div class="col-sm-12 d-flex justify-content-center">
+          <button type="button" class="btn btn-info btn-lg btn-block btn-save" (click)="showBillingData()">CONSULTAR</button>
+        </div>
+      </div>
+
+      <div [hidden]="!showBillingDataSection" class="mb-3 row align-items-center">
+        <label class="col-sm-4 col-form-label custom-label-form">Fecha límite de pago</label>
+        <div class="col-sm-8">
+          <input class="form-control custom-input text-center" id="dueDate" type="text" [value]="'20-03-2024'" disabled>
+        </div>
+      </div>
+
+      <div [hidden]="!showBillingDataSection" class="mb-3 row align-items-center">
+        <label class="col-sm-4 col-form-label custom-label-form">Periodo Facturación</label>
+        <div class="col-sm-4">
+          <input class="form-control custom-input text-center" id="initDate" type="text" [value]="'01-02-2024'" disabled>
+        </div>
+        <div class="col-sm-4">
+          <input class="form-control custom-input text-center" id="endDate" type="text" [value]="'01-03-2024'" disabled>
+        </div>
+      </div>
+      <div [hidden]="!showBillingDataSection" class="mb-3 row align-items-center">
+        <label class="col-sm-4 col-form-label custom-label-form">Total a pagar</label>
+        <div class="col-sm-8">
+          <input class="form-control custom-input text-center fw-bold" id="totalPay" type="text" [value]="'$220.550'" disabled>
+        </div>
+      </div>
+      <div [hidden]="!showBillingDataSection" class="mb-3 row align-items-center">
+        <div class="col-sm-12 d-flex justify-content-center">
+          <button type="button" class="btn btn-info btn-lg btn-block btn-save" data-bs-toggle="modal" data-bs-target="#successModal" (click)="createService()">AGREGAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-responsive">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <div class="error_dialog_text">
+          El servicio fue agregado con <br/> éxito
+        </div>
+        <img src="../assets/background/ok_dialog.png" alt="Error" style="width: 72px; height: 71px; margin: 20px 10px 5px 10px;">
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-primary btn-lg btn_modal_custom" data-bs-dismiss="modal" (click)="goBack()">
+          ACEPTAR
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
