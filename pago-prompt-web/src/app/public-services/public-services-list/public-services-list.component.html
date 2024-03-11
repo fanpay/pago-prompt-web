@@ -1,0 +1,38 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0" style="display: flex; align-items: center;">
+            <img src="../assets/subheader/public_services.png" alt="Logo" class="logo" style="width: 40px; height: 40px;">
+            <p class="subheader_title mb-0 ms-2"> Servicios </p>
+          </span>
+
+          <button class="btn btn-info btn-lg btn-block btn-back" (click)="goBack()">REGRESAR</button>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="row align-items-center mt-5">
+    <div class="col-12 col-md-6 text-md-start text-center">
+      <button class="btn btn-info btn-lg btn-block btn-save" (click)="createService()">AGREGAR</button>
+    </div>
+  </div>
+
+
+  <div class="row justify-content-center align-items-center mt-5">
+    <div class="col-12 col-md-6 text-center">
+      <ul class="list-group">
+        <li *ngFor="let service of publicServices" class="list-group-item d-flex justify-content-between align-items-center">
+          {{ service.name }}
+          <svg width="36" height="46" viewBox="0 0 36 46" fill="none" xmlns="http://www.w3.org/2000/svg" (click)="selectService(service)" data-bs-toggle="modal" data-bs-target="#warningModal">
+            <path d="M16.6459 19.8047V17.2747C16.6459 16.7954 16.8475 16.3357 17.2063 15.9968C17.5652 15.6579 18.0519 15.4675 18.5593 15.4675H22.3862C22.8936 15.4675 23.3803 15.6579 23.7392 15.9968C24.098 16.3357 24.2996 16.7954 24.2996 17.2747V19.8047M11.2883 19.8047H29.6572M28.1264 19.8047V33.7197C28.1264 34.2469 27.9047 34.7525 27.51 35.1253C27.1152 35.4981 26.5799 35.7075 26.0217 35.7075H14.9238C14.3656 35.7075 13.8303 35.4981 13.4355 35.1253C13.0408 34.7525 12.8191 34.2469 12.8191 33.7197V19.8047H28.1264Z" stroke="#212B36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
